@@ -57,6 +57,22 @@ ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -vvvv --vault-password-file vau
 - name: 01-Deploy AS3 Virtual Servers >> this task loads declarations/bigip11_as3.json file and create Partition, Folder, Virtual Servers, Pools and nodes etc.
 
 ```yml
+---
+- name: PLAY - AS3
+  hosts: "{{ bigip }}"
+  connection: httpapi
+  vars:
+    ansible_host: "{{ inventory_host }}"
+    ansible_httpapi_port: "{{ inventory_port }}"
+    ansible_user: "{{ inventory_user }}"
+    ansible_httpapi_password: "{{ inventory_pass }}"
+    ansible_network_os: f5networks.f5_bigip.bigip
+    ansible_httpapi_use_ssl: yes
+    ansible_httpapi_validate_certs: no
+    ansible_command_timeout: 1800
+    ansible_httpapi_use_proxy: false
+    f5_telemetry: false      
+  gather_facts: false
   tasks:
     - name: 01-Deploy AS3 Virtual Servers
       f5networks.f5_bigip.bigip_as3_deploy:
@@ -64,6 +80,7 @@ ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -vvvv --vault-password-file vau
         #tenant: "Partition-1"
         state: present
         timeout: 300
+
 ```
 
 ## Removing AS3 Changes in bigip11_as3_basics.yaml

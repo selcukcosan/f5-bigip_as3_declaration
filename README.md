@@ -52,7 +52,7 @@ ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -vvvv --vault-password-file vau
 ## Variables
 - `bigip` variable shows which F5 device will be connected.The value can be "bigip1", "bigip11" or "all_f5" as per the example inventory file above.
 
-## Task Explanations in bigip11_as3_basics.yaml
+## Deploying AS3 Changes in bigip11_as3_basics.yaml
 
 - name: 01-Deploy AS3 Virtual Servers >> this task loads declarations/bigip11_as3.json file and create Partition, Folder, Virtual Servers, Pools and nodes etc.
 
@@ -65,6 +65,7 @@ ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -vvvv --vault-password-file vau
         state: present
         timeout: 300```
 
+## Removing AS3 Changes in bigip11_as3_basics.yaml
 If you want to remove the declaration from the F5, change the task as below and run it again. This time all configurations related with this AS3 will be deleted.
 
 ```

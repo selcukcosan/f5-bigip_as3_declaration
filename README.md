@@ -65,7 +65,7 @@ ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -vvvv --vault-password-file vau
         state: present
         timeout: 300```
 
-If you want to remove the declaration from the F5: Change the task as below and run it again. This time all configurations related with this AS3 will be deleted.
+If you want to remove the declaration from the F5, change the task as below and run it again. This time all configurations related with this AS3 will be deleted.
 
 ```
   tasks:

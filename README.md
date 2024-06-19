@@ -56,23 +56,25 @@ ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -vvvv --vault-password-file vau
 
 - name: 01-Deploy AS3 Virtual Servers >> this task loads declarations/bigip11_as3.json file and create Partition, Folder, Virtual Servers, Pools and nodes etc.
 
-```
+```yml
   tasks:
     - name: 01-Deploy AS3 Virtual Servers
       f5networks.f5_bigip.bigip_as3_deploy:
         content: "{{ lookup('file', 'declarations/bigip11_as3.json') }}"
         #tenant: "Partition-1"
         state: present
-        timeout: 300```
+        timeout: 300
+```
 
 ## Removing AS3 Changes in bigip11_as3_basics.yaml
 If you want to remove the declaration from the F5, change the task as below and run it again. This time all configurations related with this AS3 will be deleted.
 
-```
+```yml
   tasks:
     - name: 01-Deploy AS3 Virtual Servers
       f5networks.f5_bigip.bigip_as3_deploy:
         content: "{{ lookup('file', 'declarations/bigip11_as3.json') }}"
         tenant: "Partition-1"
         state: absent
-        timeout: 300```
+        timeout: 300
+```

@@ -48,3 +48,6 @@ ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -vvvv --vault-password-file vau
 - declarations/bigip11_as3.json >> AS3 Declaration File
 - vault_pass.yaml >> Inventory vault password information
 - inventory-vault.yaml >> Inventory vault file encrypted by "Inventory vault password"
+
+## Variables
+- `bigip` variable shows which F5 device will be connected.The value can be "bigip1", "bigip11" or "all_f5" as per the example inventory file above.

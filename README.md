@@ -42,3 +42,9 @@ ansible-galaxy collection install f5networks.f5_bigip==3.2.2
 
 ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -vvvv --vault-password-file vault_pass.yaml -i inventory-vault.yaml bigip11_as3_basics.yaml --extra-vars="bigip=bigip11"
 ```
+
+## Files
+- bigip11_as3_basics.yaml >> Ansible script file
+- declarations/bigip11_as3.json >> AS3 Declaration File
+- vault_pass.yaml >> Inventory vault password information
+- inventory-vault.yaml >> Inventory vault file encrypted by "Inventory vault password"

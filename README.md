@@ -40,5 +40,5 @@ ansible-galaxy collection install f5networks.f5_bigip==3.2.2
 ## Usage:
 ```bash
 
-ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -vvvv --vault-password-file vault_pass.yaml -i inventory-vault.yaml bigip11_as3_basics.yaml --extra-vars="bigip=bigip11.xpnetworks.local"
+ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -vvvv --vault-password-file vault_pass.yaml -i inventory-vault.yaml bigip11_as3_basics.yaml --extra-vars="bigip=bigip11"
 ```

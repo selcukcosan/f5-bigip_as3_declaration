@@ -30,3 +30,9 @@ all:
           inventory_user: admin
           inventory_pass: password
 ```
+
+## Prerequisite
+F5 Ansible Declarative Modules must be installed before running the script.
+```bash
+ansible-galaxy collection install f5networks.f5_bigip==3.2.2
+```

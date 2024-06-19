@@ -64,3 +64,14 @@ ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -vvvv --vault-password-file vau
         #tenant: "Partition-1"
         state: present
         timeout: 300```
+
+If you want to remove the declaration from the F5: Change the task as below and run it again. This time all configurations related with this AS3 will be deleted.
+
+```
+  tasks:
+    - name: 01-Deploy AS3 Virtual Servers
+      f5networks.f5_bigip.bigip_as3_deploy:
+        content: "{{ lookup('file', 'declarations/bigip11_as3.json') }}"
+        tenant: "Partition-1"
+        state: absent
+        timeout: 300```
